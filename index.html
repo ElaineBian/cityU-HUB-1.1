@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy CityU - 香港城市大学学术资源管理平台</title>
+    <meta name="description" content="香港城市大学学术资源管理平台，提供智能分类、搜索和文件管理功能">
+    <meta name="keywords" content="CityU,香港城市大学,学术资源,文件管理,搜索,上传">
+    <meta name="author" content="Easy CityU Team">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Easy CityU - 香港城市大学学术资源管理平台">
+    <meta property="og:description" content="香港城市大学学术资源管理平台，提供智能分类、搜索和文件管理功能">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cityuhub.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Performance Optimization -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+</head>
+<body>
+    <!-- 跳转到主内容链接 (无障碍访问) -->
+    <a href="#main-content" class="skip-link">跳转到主内容</a>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar" role="navigation" aria-label="主导航">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <!-- CityU校徽 -->
+                <div class="cityu-logo">
+                    <img src="images/cityu-logo.png" alt="香港城市大学校徽 CityU Logo" class="logo-image">
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">Easy CityU</span>
+                    <span class="logo-sub" data-en="香港城市大学" data-zh="香港城市大学">香港城市大学</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" aria-current="page" data-en="Home" data-zh="首页">首页</a>
+                <a href="#browse" class="nav-link" data-en="Browse Resources" data-zh="浏览资源">浏览资源</a>
+                <a href="#forum" class="nav-link" data-en="Student Forum" data-zh="学生论坛">学生论坛</a>
+                <a href="#about" class="nav-link" data-en="About Us" data-zh="关于我们">关于我们</a>
+            </div>
+            <div class="nav-actions">
+                <!-- 语言切换 -->
+                <div class="language-selector">
+                    <button class="lang-toggle" id="langToggle" aria-label="切换语言">
+                        <span class="lang-current">中</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option" data-lang="zh">中文</button>
+                        <button class="lang-option" data-lang="en">English</button>
+                    </div>
+                </div>
+                <button class="btn-secondary" aria-label="用户登录" data-en="Login" data-zh="登录">登录</button>
+                <button class="btn-primary" aria-label="用户注册" data-en="Register" data-zh="注册">注册</button>
+                <button class="theme-toggle" aria-label="切换主题" id="themeToggle">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主页横幅 -->
+    <main id="main-content">
+        <section class="hero" id="home" role="banner">
+            <!-- 背景图片滑块 -->
+            <div class="hero-background-slider">
+                <div class="slide active">
+                    <img src="images/cityu-bg1.jpg" alt="香港城市大学校园风光" class="background-image">
+                </div>
+                <div class="slide">
+                    <img src="images/cityu-bg2.jpg" alt="香港城市大学人文景观" class="background-image">
+                </div>
+                <div class="slide-overlay"></div>
+            </div>
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="title-highlight">Easy CityU</span>
+                    </h1>
+                    <p class="hero-subtitle" data-en="Intelligent classification and management of CityU academic resources to support your academic journey" data-zh="智能分类管理香港城市大学学术信息，助力您的学术研究之路">智能分类管理香港城市大学学术信息，助力您的学术研究之路</p>
+                    
+                    <!-- 统计数据 -->
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="1000">0</span>
+                            <span class="stat-label" data-en="Academic Resources" data-zh="学术资源">学术资源</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="500">0</span>
+                            <span class="stat-label" data-en="Active Users" data-zh="活跃用户">活跃用户</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label" data-en="Academic Fields" data-zh="专业领域">专业领域</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 搜索栏 -->
+                    <div class="search-container">
+                        <form class="search-box" role="search" aria-label="搜索学术资源">
+                            <label for="main-search" class="sr-only" data-en="Search Academic Resources" data-zh="搜索学术资源">搜索学术资源</label>
+                            <i class="fas fa-search search-icon" aria-hidden="true"></i>
+                            <input type="text" id="main-search" placeholder="搜索课程、专业、论文..." class="search-input" autocomplete="off" aria-describedby="search-help" data-placeholder-en="Search courses, majors, papers..." data-placeholder-zh="搜索课程、专业、论文...">
+                            <div id="search-help" class="sr-only" data-en="Enter keywords to search academic resources, supports course names, majors, paper titles, etc." data-zh="输入关键词搜索学术资源，支持课程名称、专业、论文标题等">输入关键词搜索学术资源，支持课程名称、专业、论文标题等</div>
+                            <button type="button" class="camera-btn" id="cameraSearch" aria-label="拍照搜索" title="使用相机搜索" data-label-en="Photo Search" data-label-zh="拍照搜索" data-title-en="Use camera to search" data-title-zh="使用相机搜索">
+                                <i class="fas fa-camera" aria-hidden="true"></i>
+                            </button>
+                            <button type="submit" class="search-btn" aria-label="执行搜索" data-en="Search" data-zh="搜索" data-label-en="Execute Search" data-label-zh="执行搜索">搜索</button>
+                        </form>
+                        
+                        <!-- 搜索建议 -->
+                        <div class="search-suggestions" id="searchSuggestions" role="listbox" aria-label="搜索建议"></div>
+                    </div>
+
+                <!-- 快速筛选 -->
+                <div class="quick-filters">
+                    <div class="filter-group">
+                        <label data-en="Degree Type" data-zh="学位类型">学位类型</label>
+                        <select class="filter-select" id="degreeFilter">
+                            <option value="" data-en="All Degrees" data-zh="全部学位">全部学位</option>
+                            <option value="bachelor" data-en="Bachelor" data-zh="学士">学士</option>
+                            <option value="master" data-en="Master" data-zh="硕士">硕士</option>
+                            <option value="phd" data-en="PhD" data-zh="博士">博士</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label data-en="Academic Field" data-zh="专业领域">专业领域</label>
+                        <select class="filter-select" id="majorFilter">
+                            <option value="" data-en="All Fields" data-zh="全部专业">全部专业</option>
+                            <option value="engineering" data-en="Engineering" data-zh="工程学">工程学</option>
+                            <option value="business" data-en="Business" data-zh="商学">商学</option>
+                            <option value="science" data-en="Science" data-zh="理学">理学</option>
+                            <option value="arts" data-en="Liberal Arts" data-zh="文学">文学</option>
+                            <option value="law" data-en="Law" data-zh="法学">法学</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label data-en="Year" data-zh="年份">年份</label>
+                        <select class="filter-select" id="yearFilter">
+                            <option value="" data-en="All Years" data-zh="全部年份">全部年份</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label data-en="Difficulty Level" data-zh="难度等级">难度等级</label>
+                        <select class="filter-select" id="difficultyFilter">
+                            <option value="" data-en="All Levels" data-zh="全部等级">全部等级</option>
+                            <option value="beginner" data-en="Beginner" data-zh="入门">入门</option>
+                            <option value="intermediate" data-en="Intermediate" data-zh="进阶">进阶</option>
+                            <option value="advanced" data-en="Advanced" data-zh="高级">高级</option>
+                            <option value="expert" data-en="Expert" data-zh="专家">专家</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特色 -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title" data-en="Platform Features" data-zh="平台特色">平台特色</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3 data-en="Smart Filtering" data-zh="智能筛选">智能筛选</h3>
+                    <p data-en="Multi-dimensional classification and filtering to quickly locate required academic resources" data-zh="多维度分类筛选，快速定位所需学术资源">多维度分类筛选，快速定位所需学术资源</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 data-en="Photo Search" data-zh="拍照搜索">拍照搜索</h3>
+                    <p data-en="Support image recognition search to easily find related academic content" data-zh="支持图片识别搜索，轻松查找相关学术内容">支持图片识别搜索，轻松查找相关学术内容</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-en="Student Forum" data-zh="学生论坛">学生论坛</h3>
+                    <p data-en="Share notes, assignments, and reviews for academic exchange" data-zh="分享笔记、作业、复习资料，促进学术交流">分享笔记、作业、复习资料，促进学术交流</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 data-en="Rich Resources" data-zh="资源丰富">资源丰富</h3>
+                    <p data-en="Covers academic resources from all CityU colleges and majors" data-zh="涵盖CityU各学院、各专业的学术资源">涵盖CityU各学院、各专业的学术资源</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 资源浏览 -->
+    <section class="browse-section" id="browse">
+        <div class="container">
+            <h2 class="section-title">浏览学术资源</h2>
+            
+            <!-- 高级筛选器 -->
+            <div class="advanced-filters">
+                <div class="filter-row">
+                    <div class="filter-item">
+                        <label>学院</label>
+                        <select id="collegeFilter">
+                            <option value="">选择学院</option>
+                            <option value="engineering">工程学院</option>
+                            <option value="business">商学院</option>
+                            <option value="science">理学院</option>
+                            <option value="liberal-arts">人文社会科学院</option>
+                            <option value="creative-media">创意媒体学院</option>
+                            <option value="law">法学院</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label>课程类型</label>
+                        <select id="courseTypeFilter">
+                            <option value="">选择类型</option>
+                            <option value="core">核心课程</option>
+                            <option value="elective">选修课程</option>
+                            <option value="research">研究项目</option>
+                            <option value="thesis">论文</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label>难度等级</label>
+                        <select id="levelFilter">
+                            <option value="">选择难度</option>
+                            <option value="1000">1000级</option>
+                            <option value="2000">2000级</option>
+                            <option value="3000">3000级</option>
+                            <option value="4000">4000级</option>
+                            <option value="5000">5000级</option>
+                            <option value="6000">6000级</option>
+                        </select>
+                    </div>
+                    <button class="apply-filters-btn">应用筛选</button>
+                </div>
+            </div>
+
+            <!-- 资源卡片网格 -->
+            <div class="resources-grid" id="resourcesGrid" role="region" aria-label="学术资源列表" aria-live="polite">
+                <!-- 加载状态 -->
+                <div class="loading-state" id="loadingState">
+                    <div class="loading-spinner"></div>
+                    <p>正在加载资源...</p>
+                </div>
+                <!-- 资源卡片将通过JavaScript动态生成 -->
+            </div>
+            
+            <!-- 分页控制 -->
+            <div class="pagination" id="pagination" role="navigation" aria-label="分页导航">
+                <button class="pagination-btn" id="prevPage" aria-label="上一页" disabled>
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="pagination-info">
+                    <span id="currentPage">1</span> / <span id="totalPages">1</span>
+                </div>
+                <button class="pagination-btn" id="nextPage" aria-label="下一页">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学生论坛 -->
+    <section class="forum-section" id="forum">
+        <div class="container">
+            <h2 class="section-title" data-en="Student Forum" data-zh="学生论坛">学生论坛</h2>
+            <p class="section-subtitle" data-en="Share your notes, assignments, and study materials with fellow students" data-zh="与同学分享您的笔记、作业和学习资料">与同学分享您的笔记、作业和学习资料</p>
+            
+            <!-- 论坛导航 -->
+            <div class="forum-nav">
+                <button class="forum-tab active" data-tab="upload" data-en="Upload Resources" data-zh="上传资源">上传资源</button>
+                <button class="forum-tab" data-tab="browse" data-en="Browse Posts" data-zh="浏览帖子">浏览帖子</button>
+                <button class="forum-tab" data-tab="my-posts" data-en="My Posts" data-zh="我的帖子">我的帖子</button>
+            </div>
+
+            <!-- 上传资源标签页 -->
+            <div class="forum-content active" id="upload-tab">
+                <div class="upload-container">
+                    <div class="upload-area" id="uploadArea" role="button" tabindex="0" aria-label="文件上传区域" aria-describedby="upload-help">
+                        <div class="upload-content">
+                            <i class="fas fa-cloud-upload-alt upload-icon" aria-hidden="true"></i>
+                            <h3 data-en="Drag files here or click to upload" data-zh="拖拽文件到此处或点击上传">拖拽文件到此处或点击上传</h3>
+                            <p id="upload-help" data-en="Support PDF, DOC, DOCX, PPT, PPTX, TXT formats, max 50MB per file" data-zh="支持 PDF, DOC, DOCX, PPT, PPTX, TXT 等格式，单个文件最大 50MB">支持 PDF, DOC, DOCX, PPT, PPTX, TXT 等格式，单个文件最大 50MB</p>
+                            <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.jpg,.png" aria-describedby="file-requirements">
+                            <div id="file-requirements" class="sr-only" data-en="Supported formats: PDF, Word documents, PowerPoint presentations, text files, images. Max file size: 50MB." data-zh="支持的文件格式：PDF、Word文档、PowerPoint演示文稿、文本文件、图片。单个文件大小不超过50MB。">
+                                支持的文件格式：PDF、Word文档、PowerPoint演示文稿、文本文件、图片。单个文件大小不超过50MB。
+                            </div>
+                            <button class="upload-btn" type="button" data-en="Choose Files" data-zh="选择文件">选择文件</button>
+                        
+                        <!-- 上传进度 -->
+                        <div class="upload-progress" id="uploadProgress" style="display: none;">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span id="progressPercent">0%</span>
+                                <span id="progressStatus">准备上传...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="upload-form">
+                    <h3>文件信息</h3>
+                    <form id="uploadForm">
+                        <div class="form-group">
+                            <label data-en="Resource Type" data-zh="资源类型">资源类型</label>
+                            <select id="resourceType" required>
+                                <option value="" data-en="Select Type" data-zh="选择类型">选择类型</option>
+                                <option value="notes" data-en="Study Notes" data-zh="学习笔记">学习笔记</option>
+                                <option value="assignment" data-en="Assignment" data-zh="作业">作业</option>
+                                <option value="review" data-en="Review Material" data-zh="复习资料">复习资料</option>
+                                <option value="project" data-en="Project" data-zh="项目">项目</option>
+                                <option value="exam" data-en="Exam Material" data-zh="考试资料">考试资料</option>
+                                <option value="other" data-en="Other" data-zh="其他">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-en="File Title" data-zh="文件标题">文件标题</label>
+                            <input type="text" id="fileTitle" required data-placeholder-en="Enter resource title" data-placeholder-zh="输入资源标题">
+                        </div>
+                        <div class="form-group">
+                            <label data-en="College" data-zh="所属学院">所属学院</label>
+                            <select id="fileCollege" required>
+                                <option value="" data-en="Select College" data-zh="选择学院">选择学院</option>
+                                <option value="engineering" data-en="College of Engineering" data-zh="工程学院">工程学院</option>
+                                <option value="business" data-en="College of Business" data-zh="商学院">商学院</option>
+                                <option value="science" data-en="College of Science" data-zh="理学院">理学院</option>
+                                <option value="liberal-arts" data-en="College of Liberal Arts and Social Sciences" data-zh="人文社会科学院">人文社会科学院</option>
+                                <option value="creative-media" data-en="School of Creative Media" data-zh="创意媒体学院">创意媒体学院</option>
+                                <option value="law" data-en="School of Law" data-zh="法学院">法学院</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Major" data-zh="专业">专业</label>
+                            <input type="text" id="fileMajor" required data-placeholder-en="Enter your major" data-placeholder-zh="输入您的专业">
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Course Code" data-zh="课程代码">课程代码</label>
+                            <input type="text" id="fileCourseCode" placeholder="例如: CS1234" data-placeholder-en="e.g., CS1234" data-placeholder-zh="例如: CS1234">
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Academic Year" data-zh="学年">学年</label>
+                            <select id="fileYear" required>
+                                <option value="" data-en="Select Year" data-zh="选择学年">选择学年</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Difficulty Level" data-zh="难度等级">难度等级</label>
+                            <select id="difficultyLevel" required>
+                                <option value="" data-en="Select Level" data-zh="选择等级">选择等级</option>
+                                <option value="beginner" data-en="Beginner" data-zh="入门">入门</option>
+                                <option value="intermediate" data-en="Intermediate" data-zh="进阶">进阶</option>
+                                <option value="advanced" data-en="Advanced" data-zh="高级">高级</option>
+                                <option value="expert" data-en="Expert" data-zh="专家">专家</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Description" data-zh="文件描述">文件描述</label>
+                            <textarea id="fileDescription" rows="4" data-placeholder-en="Describe your resource..." data-placeholder-zh="描述您的资源..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Tags" data-zh="标签">标签</label>
+                            <input type="text" id="fileTags" placeholder="用逗号分隔多个标签" data-placeholder-en="Separate multiple tags with commas" data-placeholder-zh="用逗号分隔多个标签">
+                        </div>
+                        <button type="submit" class="submit-btn" data-en="Upload Resource" data-zh="上传资源">上传资源</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 浏览帖子标签页 -->
+            <div class="forum-content" id="browse-tab" style="display: none;">
+                <div class="forum-filters">
+                    <div class="filter-row">
+                        <select class="forum-filter" id="forumResourceType">
+                            <option value="" data-en="All Types" data-zh="全部类型">全部类型</option>
+                            <option value="notes" data-en="Study Notes" data-zh="学习笔记">学习笔记</option>
+                            <option value="assignment" data-en="Assignment" data-zh="作业">作业</option>
+                            <option value="review" data-en="Review Material" data-zh="复习资料">复习资料</option>
+                            <option value="project" data-en="Project" data-zh="项目">项目</option>
+                            <option value="exam" data-en="Exam Material" data-zh="考试资料">考试资料</option>
+                        </select>
+                        <select class="forum-filter" id="forumCollege">
+                            <option value="" data-en="All Colleges" data-zh="全部学院">全部学院</option>
+                            <option value="engineering" data-en="Engineering" data-zh="工程学院">工程学院</option>
+                            <option value="business" data-en="Business" data-zh="商学院">商学院</option>
+                            <option value="science" data-en="Science" data-zh="理学院">理学院</option>
+                        </select>
+                        <select class="forum-filter" id="forumDifficulty">
+                            <option value="" data-en="All Levels" data-zh="全部等级">全部等级</option>
+                            <option value="beginner" data-en="Beginner" data-zh="入门">入门</option>
+                            <option value="intermediate" data-en="Intermediate" data-zh="进阶">进阶</option>
+                            <option value="advanced" data-en="Advanced" data-zh="高级">高级</option>
+                            <option value="expert" data-en="Expert" data-zh="专家">专家</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="forum-posts" id="forumPosts">
+                    <!-- 示例帖子 -->
+                    <div class="forum-post">
+                        <div class="post-header">
+                            <div class="post-type notes">
+                                <i class="fas fa-sticky-note"></i>
+                                <span data-en="Study Notes" data-zh="学习笔记">学习笔记</span>
+                            </div>
+                            <div class="post-difficulty beginner" data-en="Beginner" data-zh="入门">入门</div>
+                        </div>
+                        <h3 class="post-title">数据结构与算法 - 第一章笔记</h3>
+                        <div class="post-meta">
+                            <span class="post-course">CS2402</span>
+                            <span class="post-college" data-en="Engineering" data-zh="工程学院">工程学院</span>
+                            <span class="post-year">2024</span>
+                        </div>
+                        <p class="post-description">包含基本概念、时间复杂度分析和常见数据结构的详细笔记</p>
+                        <div class="post-tags">
+                            <span class="tag">数据结构</span>
+                            <span class="tag">算法</span>
+                            <span class="tag">笔记</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="post-btn download" data-en="Download" data-zh="下载">
+                                <i class="fas fa-download"></i> 下载
+                            </button>
+                            <button class="post-btn like" data-en="Like" data-zh="点赞">
+                                <i class="fas fa-heart"></i> 23
+                            </button>
+                            <button class="post-btn comment" data-en="Comment" data-zh="评论">
+                                <i class="fas fa-comment"></i> 5
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="forum-post">
+                        <div class="post-header">
+                            <div class="post-type assignment">
+                                <i class="fas fa-tasks"></i>
+                                <span data-en="Assignment" data-zh="作业">作业</span>
+                            </div>
+                            <div class="post-difficulty intermediate" data-en="Intermediate" data-zh="进阶">进阶</div>
+                        </div>
+                        <h3 class="post-title">微积分作业解答 - 第三章</h3>
+                        <div class="post-meta">
+                            <span class="post-course">MA1200</span>
+                            <span class="post-college" data-en="Science" data-zh="理学院">理学院</span>
+                            <span class="post-year">2024</span>
+                        </div>
+                        <p class="post-description">详细的作业解答步骤，包含图表和公式推导</p>
+                        <div class="post-tags">
+                            <span class="tag">微积分</span>
+                            <span class="tag">作业</span>
+                            <span class="tag">解答</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="post-btn download" data-en="Download" data-zh="下载">
+                                <i class="fas fa-download"></i> 下载
+                            </button>
+                            <button class="post-btn like" data-en="Like" data-zh="点赞">
+                                <i class="fas fa-heart"></i> 18
+                            </button>
+                            <button class="post-btn comment" data-en="Comment" data-zh="评论">
+                                <i class="fas fa-comment"></i> 3
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 我的帖子标签页 -->
+            <div class="forum-content" id="my-posts-tab" style="display: none;">
+                <div class="my-posts-header">
+                    <h3 data-en="My Uploaded Resources" data-zh="我上传的资源">我上传的资源</h3>
+                    <div class="my-posts-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label" data-en="Total Uploads" data-zh="总上传数">总上传数</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label" data-en="Total Downloads" data-zh="总下载数">总下载数</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">89</span>
+                            <span class="stat-label" data-en="Total Likes" data-zh="总点赞数">总点赞数</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="my-posts-list">
+                    <div class="my-post-item">
+                        <div class="my-post-info">
+                            <h4>操作系统原理 - 进程管理笔记</h4>
+                            <div class="my-post-meta">
+                                <span class="upload-date" data-en="Uploaded: 2024-03-15" data-zh="上传时间：2024-03-15">上传时间：2024-03-15</span>
+                                <span class="post-type notes" data-en="Study Notes" data-zh="学习笔记">学习笔记</span>
+                            </div>
+                        </div>
+                        <div class="my-post-stats">
+                            <span class="download-count"><i class="fas fa-download"></i> 23</span>
+                            <span class="like-count"><i class="fas fa-heart"></i> 15</span>
+                            <span class="comment-count"><i class="fas fa-comment"></i> 4</span>
+                        </div>
+                        <div class="my-post-actions">
+                            <button class="edit-btn" data-en="Edit" data-zh="编辑">编辑</button>
+                            <button class="delete-btn" data-en="Delete" data-zh="删除">删除</button>
+                        </div>
+                    </div>
+
+                    <div class="my-post-item">
+                        <div class="my-post-info">
+                            <h4>数据库系统期末复习资料</h4>
+                            <div class="my-post-meta">
+                                <span class="upload-date" data-en="Uploaded: 2024-03-10" data-zh="上传时间：2024-03-10">上传时间：2024-03-10</span>
+                                <span class="post-type review" data-en="Review Material" data-zh="复习资料">复习资料</span>
+                            </div>
+                        </div>
+                        <div class="my-post-stats">
+                            <span class="download-count"><i class="fas fa-download"></i> 45</span>
+                            <span class="like-count"><i class="fas fa-heart"></i> 32</span>
+                            <span class="comment-count"><i class="fas fa-comment"></i> 8</span>
+                        </div>
+                        <div class="my-post-actions">
+                            <button class="edit-btn" data-en="Edit" data-zh="编辑">编辑</button>
+                            <button class="delete-btn" data-en="Delete" data-zh="删除">删除</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Easy CityU</h3>
+                    <p>致力于为香港城市大学学生提供最优质的学术资源管理服务</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-link">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="social-link">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="GitHub" class="social-link">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#browse">浏览资源</a></li>
+                        <li><a href="#upload">上传文件</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#privacy">隐私政策</a></li>
+                        <li><a href="#terms">使用条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:support@cityuhub.com">support@cityuhub.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <a href="tel:+85212345678">+852 1234 5678</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span>香港九龙塘达之路83号</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>订阅更新</h4>
+                    <p>获取最新的学术资源和平台更新</p>
+                    <form class="newsletter-form" aria-label="订阅新闻通讯">
+                        <input type="email" placeholder="输入您的邮箱" aria-label="邮箱地址" required>
+                        <button type="submit" aria-label="订阅">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Easy CityU. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#privacy">隐私政策</a>
+                        <a href="#terms">使用条款</a>
+                        <a href="#accessibility">无障碍声明</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 拍照搜索模态框 -->
+    <div class="modal" id="cameraModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>拍照搜索</h3>
+            <div class="camera-container">
+                <video id="cameraVideo" autoplay></video>
+                <canvas id="cameraCanvas" style="display: none;"></canvas>
+                <div class="camera-controls">
+                    <button id="captureBtn" class="btn-primary">拍照</button>
+                    <button id="uploadImageBtn" class="btn-secondary">上传图片</button>
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 通知系统 -->
+    <div class="notification-container" id="notificationContainer" aria-live="polite" aria-atomic="true"></div>
+    
+    <!-- 确认对话框 -->
+    <div class="modal confirmation-modal" id="confirmationModal" role="dialog" aria-labelledby="confirmTitle" aria-describedby="confirmMessage">
+        <div class="modal-content">
+            <h3 id="confirmTitle">确认操作</h3>
+            <p id="confirmMessage">您确定要执行此操作吗？</p>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="confirmCancel">取消</button>
+                <button class="btn-primary" id="confirmOk">确认</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 服务工作者注册 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(error => console.log('SW registration failed'));
+            });
+        }
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

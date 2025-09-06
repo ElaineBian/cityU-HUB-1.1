@@ -1,0 +1,48 @@
+# CityU Academic Hub - 预览配置文件
+# 点击运行后会调用该文件配置自动运行应用
+
+autoOpen: true # 打开应用时是否自动开启所有下方apps的预览
+
+apps: # 支持配置多个应用
+  - port: 8080 # 应用的端口
+    run: python3 -m http.server 8080 # 使用Python静态文件服务器
+    root: / # 应用的启动目录
+    name: cityu-academic-hub # 应用名称
+    description: CityU学术信息管理平台 - 智能分类管理香港城市大学学术资源 # 应用描述
+    autoOpen: true # 打开应用时是否自动开启预览（优先级高于根级 autoOpen）
+    
+  # 备用端口配置（如果8080被占用）
+  - port: 3000
+    run: python3 -m http.server 3000
+    root: /
+    name: cityu-academic-hub-alt
+    description: CityU学术信息管理平台 - 备用端口
+    autoOpen: false
+    
+  # 开发环境配置
+  - port: 8000
+    run: python -m http.server 8000
+    root: /
+    name: cityu-academic-hub-dev
+    description: CityU学术信息管理平台 - 开发环境
+    autoOpen: false
+
+# 环境变量配置
+env:
+  NODE_ENV: production
+  PORT: 8080
+  APP_NAME: "CityU Academic Hub"
+  APP_VERSION: "1.0.0"
+
+# 健康检查配置
+healthCheck:
+  enabled: true
+  path: "/"
+  timeout: 5000
+  interval: 30000
+
+# 日志配置
+logging:
+  enabled: true
+  level: info
+  format: combined
